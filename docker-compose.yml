@@ -1,0 +1,22 @@
+version: '3.2'
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - 6379:6379
+
+  tesla:
+    image: tesla:0.1
+    container_name: tesla
+    ports:
+        - 8080:8080
+    env_file:
+        - .env
+    volumes:
+        - ./config.py:/opt/will/config.py
+    depends_on:
+        - redis

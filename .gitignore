@@ -1,0 +1,6 @@
+venv/
+# Packages
+*.egg
+*.egg-info
+.cache
+.env
