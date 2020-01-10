@@ -11,8 +11,8 @@ services:
       - 6379:6379
 
   tesla:
-    image: tesla:0.1
-    container_name: tesla
+    image: ahmetyuksel/teslabot
+    container_name: teslabot
     restart: always
     ports:
         - 8080:8080
